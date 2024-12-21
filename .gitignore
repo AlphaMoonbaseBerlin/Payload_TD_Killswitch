@@ -41,3 +41,7 @@ next-env.d.ts
 .env
 
 /media
+TD/typings
+TD/olib
+.td-killswitch.db
+td-killswitch.db
