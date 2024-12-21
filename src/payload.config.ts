@@ -13,7 +13,7 @@ import { Installation } from './collections/Installation'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
-
+import { migrations } from './migrations'
 export default buildConfig({
   admin: {
     user: Users.slug,
@@ -28,8 +28,10 @@ export default buildConfig({
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
   db: sqliteAdapter({
+    prodMigrations: migrations,
     client: {
       url: process.env.DATABASE_URI || '',
+     
     },
   }),
   sharp,
