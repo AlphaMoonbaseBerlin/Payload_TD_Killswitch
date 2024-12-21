@@ -45,3 +45,6 @@ TD/typings
 TD/olib
 .td-killswitch.db
 td-killswitch.db
+.pnpm-store
+pnpm-lock.yaml
+td-killswitch.tar
