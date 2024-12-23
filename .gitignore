@@ -48,3 +48,4 @@ td-killswitch.db
 .pnpm-store
 pnpm-lock.yaml
 td-killswitch.tar
+_node_modules
