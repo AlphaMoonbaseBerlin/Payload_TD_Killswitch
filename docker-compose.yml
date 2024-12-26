@@ -4,7 +4,10 @@ services:
   payload:
     build: .
     environment:
+      # Required for portainer to be able to overwrite.
+      # 
       - PAYLOAD_SECRET
+      # - PAYLOAD_SECRET=REPLACE_WITH_PROPER_VALUE
     ports:
       - 3000:3000
     volumes:
