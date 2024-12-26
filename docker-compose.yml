@@ -3,8 +3,10 @@ version: '3'
 services:
   payload:
     build: .
-    environment:
-      - PAYLOAD_SECRET=FOR_TESTING_ONLY_FROM_COMPOSE
+     # Uncomment when not set via local ENV.
+    # environment:
+      # - PAYLOAD_SECRET=FOR_TESTING_ONLY_FROM_COMPOSE
+      
     ports:
       - 3000:3000
     volumes:
