@@ -8,9 +8,9 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - database:./database
-      - uploads:./uploads
+      - db:/app/db
+      - uploads:/app/uploads
 
 volumes:
-  database:
+  db:
   uploads:
