@@ -12,17 +12,26 @@ RUN npm run build
 FROM base as runner
 WORKDIR /app
 # Copy built standalone version.
-# Note: This is missing /public and .next/static
+# Note: This is missing /public 
+# We need to check if public even exists before we can copy it!
 COPY --from=builder /build/.next/standalone .
 COPY --from=builder /build/.next/static ./.next/static
+
 # Running
 ENV NODE_ENV production
 EXPOSE 3000
 ENV PORT 3000
-RUN mkdir db
 
+# Create mountable folder for local uploads.
+RUN mkdir uploads
+ENV PAYLOAD_UPLOADS_DIR ./uploads
+
+# Create mountable folder for local database.
+RUN mkdir db
 ENV DATABASE_URI file:./db/database.db
+
+# Payloadscret. For testing only.
 ENV PAYLOAD_SECRET FOR_TESTING_ONLY
 
-#RUN cat package.json
+# Execute standalone compiled version.
 CMD node server.js
