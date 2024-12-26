@@ -31,8 +31,8 @@ RUN mkdir db
 ENV DATABASE_URI file:./db/database.db
 
 # Payloadscret. For testing only.
-# This does not get overwritten by docker-compose, :()
-# ENV PAYLOAD_SECRET FOR_TESTING_ONLY
+
+ENV PAYLOAD_SECRET FOR_TESTING_ONLY_FROM_DOCKERFILE
 
 
 # Execute standalone compiled version.
