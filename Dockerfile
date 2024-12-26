@@ -31,7 +31,9 @@ RUN mkdir db
 ENV DATABASE_URI file:./db/database.db
 
 # Payloadscret. For testing only.
-ENV PAYLOAD_SECRET FOR_TESTING_ONLY
+# This does not get overwritten by docker-compose, :()
+# ENV PAYLOAD_SECRET FOR_TESTING_ONLY
+
 
 # Execute standalone compiled version.
 CMD node server.js
